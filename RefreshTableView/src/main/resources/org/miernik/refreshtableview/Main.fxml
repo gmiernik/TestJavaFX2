@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.MapValueFactory?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.miernik.refreshtableview.Main">
+	<padding>
+		<Insets left="5" right="5" top="5" bottom="5" />
+	</padding>
+	<HBox>
+		<padding>
+			<Insets left="5" right="5" top="5" bottom="5" />
+		</padding>
+		<Label text="First name" />
+		<TextField fx:id="firstNameField" />
+		<Label text="Last name" />
+		<TextField fx:id="lastNameField" />
+		<Button text="save" fx:id="saveButton" />
+		<Button text="add" fx:id="addButton" />
+	</HBox>
+	<TableView fx:id="tableView">
+		<columns>
+			<TableColumn text="ID" prefWidth="40">
+				<cellValueFactory>
+					<PropertyValueFactory property="id" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="FirstName" prefWidth="150">
+				<cellValueFactory>
+					<PropertyValueFactory property="firstName" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="LastName" prefWidth="150">
+				<cellValueFactory>
+					<PropertyValueFactory property="lastName" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn prefWidth="50" text="Changes">
+				<cellValueFactory>
+					<PropertyValueFactory property="numberOfChanges" />
+				</cellValueFactory>
+			</TableColumn>
+		</columns>
+	</TableView>
+</VBox>
